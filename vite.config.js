@@ -8,11 +8,11 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: 'public/_redirects', // 👈 Source file to copy
-          dest: '.'                // 👈 Destination: root of dist/
+          src: 'public/_redirects',
+          dest: '.'
         }
       ]
     })
   ],
-  base: './'
+  base: '/', // ✅ Set this to '/' for Netlify
 })
