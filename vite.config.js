@@ -1,7 +1,18 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
-  plugins: [react()],
-  base: './', // Essential for Netlify and GitHub Pages deployments
+  plugins: [
+    react(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'public/_redirects', // 👈 Source file to copy
+          dest: '.'                // 👈 Destination: root of dist/
+        }
+      ]
+    })
+  ],
+  base: './'
 })
