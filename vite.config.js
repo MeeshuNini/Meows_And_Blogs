@@ -1,18 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
-  plugins: [
-    react(),
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'public/_redirects',
-          dest: '.'
-        }
-      ]
-    })
-  ],
-  base: '/', // ✅ Set this to '/' for Netlify
+  plugins: [react()],
+  base: '/Meows_And_Blogs/', // 👈 Must match your GitHub repo name
 })
